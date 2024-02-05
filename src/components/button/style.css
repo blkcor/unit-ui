@@ -1,0 +1,144 @@
+.uni-button {
+  --uni-button-font-weight: var(--uni-font-weight-primary);
+  --uni-button-border-color: var(--uni-border-color);
+  --uni-button-bg-color: var(--uni-fill-color-blank);
+  --uni-button-text-color: var(--uni-text-color-regular);
+  --uni-button-disabled-text-color: var(--uni-disabled-text-color);
+  --uni-button-disabled-bg-color: var(--uni-fill-color-blank);
+  --uni-button-disabled-border-color: var(--uni-border-color-light);
+  --uni-button-hover-text-color: var(--uni-color-primary);
+  --uni-button-hover-bg-color: var(--uni-color-primary-light-9);
+  --uni-button-hover-border-color: var(--uni-color-primary-light-7);
+  --uni-button-active-text-color: var(--uni-button-hover-text-color);
+  --uni-button-active-bg-color: var(--uni-button-hover-bg-color);
+  --uni-button-active-border-color: var(--uni-color-primary);
+  --uni-button-outline-color: var(--uni-color-primary-light-5);
+  --uni-button-active-color: var(--uni-text-color-primary);
+  --uni-button-focus-text-color: var(--uni-color-white);
+}
+
+.uni-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  height: 32px;
+  white-space: nowrap;
+  cursor: pointer;
+  color: var(--uni-button-text-color);
+  text-align: center;
+  box-sizing: border-box;
+  outline: none;
+  transition: 0.1s;
+  font-weight: var(--uni-button-font-weight);
+  user-select: none;
+  vertical-align: middle;
+  background-color: var(--uni-button-bg-color);
+  border: var(--uni-border);
+  border-color: var(--uni-button-border-color);
+  padding: 8px 15px;
+  font-size: var(--uni-font-size-base);
+  border-radius: var(--uni-border-radius-base);
+
+  & + & {
+    margin-left: 12px;
+  }
+
+  &:hover,
+  &:focus {
+    color: var(--uni-button-hover-text-color);
+    background-color: var(--uni-button-hover-bg-color);
+    border-color: var(--uni-button-hover-border-color);
+    outline: none;
+  }
+
+  &:active {
+    color: var(--uni-button-active-text-color);
+    background-color: var(--uni-button-active-bg-color);
+    border-color: var(--uni-button-active-border-color);
+    outline: none;
+  }
+
+  &.is-plain {
+    --uni-button-hover-text-color: var(--uni-color-primary);
+    --uni-button-hover-bg-color: var(--uni-fill-color-blank);
+    --uni-button-hover-border-color: var(--uni-color-primary);
+  }
+
+  &.is-plain:focus {
+    color: var(--uni-button-focus-text-color);
+  }
+
+  &.is-rounded {
+    border-radius: var(--uni-border-radius-round);
+  }
+
+  &.is-circle {
+    border-radius: 50%;
+    padding: 8px;
+  }
+
+  &.is-disabled,
+  &.is-disabled:hover,
+  &.is-disabled:focus,
+  &[disabled],
+  &[disabled]:hover,
+  &[disabled]:focus {
+    color: var(--uni-button-disabled-text-color);
+    cursor: not-allowed;
+    background-image: none;
+    background-color: var(--uni-button-disabled-bg-color);
+    border-color: var(--uni--button-disabled-border-color);
+  }
+}
+
+@each $val in primary, danger, warning, success, info {
+  .uni-button--$(val) {
+    --uni-button-text-color: var(--uni-text-white);
+    --uni-button-bg-color: var(--uni-color-$(val));
+    --uni-button-border-color: var(--uni-color-$(val));
+    --uni-button-outline-color: var(--uni-color-$(val)-light-5);
+    --uni-button-active-color: var(--uni-color-$(val)-dark-2);
+    --uni-button-hover-text-color: var(--uni-color-white);
+    --uni-button-hover-bg-color: var(--uni-color-$(val)-light-3);
+    --uni-button-hover-border-color: var(--uni-color-$(val)-light-3);
+    --uni-button-active-bg-color: var(--uni-color-$(val)-dark-2);
+    --uni-button-active-border-color: var(--uni-color-$(val)-dark-2);
+    --uni-button-disabled-text-color: var(--uni-color-white);
+    --uni-button-disabled-bg-color: var(--uni-color-$(val)-light-5);
+    --uni-button-disabled-border-color: var(--uni-color-$(val)-light-5);
+  }
+
+  .uni-button--$(val).is-plain {
+    --uni-button-text-color: var(--uni-color-$(val));
+    --uni-button-bg-color: var(--uni-color-$(val)-light-9);
+    --uni-button-border-color: var(--uni-color-$(val));
+    --uni-button-outline-color: var(--uni-color-$(val)-light-5);
+    --uni-button-hover-text-color: var(--uni-color-white);
+    --uni-button-hover-bg-color: var(--uni-color-$(val));
+    --uni-button-hover-border-color: var(--uni-color-$(val)-light-9);
+  }
+}
+
+.uni-button--large {
+  --uni-button-size: 40px;
+  height: var(--uni-button-size);
+  padding: 12px 19px;
+  font-size: var(--uni-font-size-base);
+  border-radius: var(--uni-border-radius-base);
+}
+
+.uni-button--medium {
+  --uni-button-size: 32px;
+  height: var(--uni-button-size);
+  padding: 8px 15px;
+  font-size: var(--uni-font-size-base);
+  border-radius: var(--uni-border-radius-base);
+}
+.uni-button--small {
+  --uni-button-size: 24px;
+  height: var(--uni-button-size);
+  padding: 4px 15px;
+  font-size: var(--uni-font-size-small);
+  border-radius: var(--uni-border-radius-base);
+}
