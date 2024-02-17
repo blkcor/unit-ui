@@ -11,10 +11,31 @@ const collapeseContext = inject(collapeseContextKey)
 
 const props = defineProps<CollapseItemProps>()
 //判断是否actived
-const isActive = computed(() => collapeseContext?.activedNames.value.includes(props.name))
+const isActived = computed(() => collapeseContext?.activedNames.value.includes(props.name))
 const handleClick = () => {
   if (props.disabled) return
   collapeseContext?.handleItemClick(props.name)
+}
+//动画事件
+const animationEvents: Record<string, (el: HTMLElement) => void> = {
+  beforeEnter(el) {
+    el.style.height = '0'
+  },
+  enter(el) {
+    el.style.height = el.scrollHeight + 'px'
+  },
+  afterEnter(el) {
+    el.style.height = ''
+  },
+  beforeLeave(el) {
+    el.style.height = el.scrollHeight + 'px'
+  },
+  leave(el) {
+    el.style.height = '0'
+  },
+  afterLeave(el) {
+    el.style.height = ''
+  }
 }
 </script>
 
@@ -25,17 +46,31 @@ const handleClick = () => {
       'is-disabled': disabled
     }"
   >
-    <div class="uni-collapse-item__header" :id="`item-header-${name}`" @click="handleClick">
+    <div
+      class="uni-collapse-item__header"
+      :class="{
+        'is-actived': isActived,
+        'is-disabled': disabled
+      }"
+      :id="`item-header-${name}`"
+      @click="handleClick"
+    >
       <slot name="title">{{ title }}</slot>
     </div>
-    <div class="uni-collapse-item__content" :id="`item-content-${name}`" v-show="isActive">
-      <slot />
-    </div>
+    <Transition
+      name="slide"
+      @before-enter="animationEvents.beforeEnter"
+      @enter="animationEvents.enter"
+      @after-enter="animationEvents.afterEnter"
+      @before-leave="animationEvents.beforeLeave"
+      @leave="animationEvents.leave"
+      @after-leave="animationEvents.afterLeave"
+    >
+      <div class="uni-collapse-item__wrapper" v-show="isActived">
+        <div class="uni-collapse-item__content" :id="`item-content-${name}`">
+          <slot />
+        </div>
+      </div>
+    </Transition>
   </div>
 </template>
-
-<style scoped>
-.uni-collapse-item__header {
-  font-size: 30px;
-}
-</style>
