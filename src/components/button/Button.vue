@@ -1,6 +1,8 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 import type { ButtonProps } from './types'
+import Icon from '../icon/Icon.vue'
+
 defineOptions({
   name: 'UniButton'
 })
@@ -29,13 +31,18 @@ defineExpose({ ref: _ref })
       'is-plain': plain,
       'is-rounded': rounded,
       'is-circle': circle,
-      'is-disabled': disabled
+      'is-disabled': disabled,
+      'is-loading': loading
     }"
-    :disabled="disabled"
+    :disabled="disabled || loading"
     :autofocus="autofocus"
     :type="nativeType"
   >
-    <slot />
+    <Icon icon="spinner" spin v-if="loading" />
+    <Icon :icon="icon" v-if="icon" />
+    <span>
+      <slot />
+    </span>
   </button>
 </template>
 

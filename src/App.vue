@@ -15,9 +15,9 @@ const activedNames = ref<string[]>(['collapse'])
 </script>
 
 <template>
-  <!-- <div class="btn-group">
-    <Button>Default</Button>
-    <Button type="primary">Primary</Button>
+  <div class="btn-group">
+    <Button loading>Default</Button>
+    <Button type="primary" icon="arrow-up">Primary</Button>
     <Button type="success">Success</Button>
     <Button type="warning">Warning</Button>
     <Button type="danger">Danger</Button>
@@ -40,9 +40,9 @@ const activedNames = ref<string[]>(['collapse'])
     <Button type="primary" size="large">Large</Button>
     <Button type="primary" size="medium">Medium</Button>
     <Button type="primary" size="small">Small</Button>
-  </div> -->
+  </div>
 
-  <!-- <div class="collapse">
+  <div class="collapse">
     <Collapse v-model="activedNames" accordion>
       <CollapseItem title="collapse" name="collapse">
         <template #title>
@@ -60,7 +60,7 @@ const activedNames = ref<string[]>(['collapse'])
       </CollapseItem>
     </Collapse>
     {{ activedNames }}
-  </div> -->
+  </div>
   <Icon icon="fa-arrow-up" size="2x" type="primary" color="#4978be" />
 </template>
 <style scoped></style>

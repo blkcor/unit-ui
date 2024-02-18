@@ -36,6 +36,13 @@
 
   &.is-actived {
     border-bottom-color: transparent;
+    .header-icon {
+      transform: rotate(90deg);
+    }
+  }
+
+  .header-icon {
+    transition: transform var(--uni-transition-duration);
   }
 }
 

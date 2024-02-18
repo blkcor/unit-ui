@@ -90,6 +90,10 @@
     background-color: var(--uni-button-disabled-bg-color);
     border-color: var(--uni--button-disabled-border-color);
   }
+
+  [class*='uni-icon'] + span {
+    margin-left: 8px;
+  }
 }
 
 @each $val in primary, danger, warning, success, info {

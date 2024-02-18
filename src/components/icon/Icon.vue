@@ -1,5 +1,10 @@
 <template>
-  <i class="uni-icon" :class="{ [`uni-icon--${type}`]: type }" :style="customStyles">
+  <i
+    class="uni-icon"
+    :class="{ [`uni-icon--${type}`]: type }"
+    :style="customStyles"
+    v-bind="$attrs"
+  >
     <FontAwesomeIcon v-bind="filteredProps" />
   </i>
 </template>
@@ -8,7 +13,7 @@
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 import type { IconProps } from './types'
 import { omit } from 'lodash'
-import { computed, toRef } from 'vue'
+import { computed } from 'vue'
 defineOptions({
   name: 'UniIcon',
   inheritAttrs: false

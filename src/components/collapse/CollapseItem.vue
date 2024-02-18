@@ -2,6 +2,7 @@
 import { inject, computed } from 'vue'
 import type { CollapseItemProps } from './types'
 import { collapeseContextKey } from './types'
+import Icon from '../icon/Icon.vue'
 
 defineOptions({
   name: 'UniCollapseItem'
@@ -12,6 +13,7 @@ const collapeseContext = inject(collapeseContextKey)
 const props = defineProps<CollapseItemProps>()
 //判断是否actived
 const isActived = computed(() => collapeseContext?.activedNames.value.includes(props.name))
+
 const handleClick = () => {
   if (props.disabled) return
   collapeseContext?.handleItemClick(props.name)
@@ -56,6 +58,7 @@ const animationEvents: Record<string, (el: HTMLElement) => void> = {
       @click="handleClick"
     >
       <slot name="title">{{ title }}</slot>
+      <Icon class="header-icon" icon="angle-right" />
     </div>
     <Transition
       name="slide"
