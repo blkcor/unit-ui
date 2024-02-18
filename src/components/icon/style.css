@@ -1,0 +1,16 @@
+.uni-icon {
+  --uni-icon-color: inherit;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  fill: currentColor;
+  color: var(--uni-icon-color);
+  font-size: inherit;
+}
+
+@each $val in primary, info, success, warning, danger {
+  .uni-icon--$(val) {
+    --uni-icon-color: var(--uni-color-$(val));
+  }
+}

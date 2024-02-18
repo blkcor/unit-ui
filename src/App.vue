@@ -2,12 +2,14 @@
 import Button from '@/components/button/Button.vue'
 import CollapseItem from './components/collapse/CollapseItem.vue'
 import Collapse from './components/collapse/Collapse.vue'
+import Icon from './components/icon/Icon.vue'
 import { onMounted, ref } from 'vue'
 
 const activedNames = ref<string[]>(['collapse'])
+// const size = ref<any>('10x')
 // onMounted(() => {
 //   setTimeout(() => {
-//     activedNames.value = ['collapse', 'collapse1']
+//     size.value = '2x'
 //   }, 2000)
 // })
 </script>
@@ -40,7 +42,7 @@ const activedNames = ref<string[]>(['collapse'])
     <Button type="primary" size="small">Small</Button>
   </div> -->
 
-  <div class="collapse">
+  <!-- <div class="collapse">
     <Collapse v-model="activedNames" accordion>
       <CollapseItem title="collapse" name="collapse">
         <template #title>
@@ -58,6 +60,7 @@ const activedNames = ref<string[]>(['collapse'])
       </CollapseItem>
     </Collapse>
     {{ activedNames }}
-  </div>
+  </div> -->
+  <Icon icon="fa-arrow-up" size="2x" type="primary" color="#4978be" />
 </template>
 <style scoped></style>
