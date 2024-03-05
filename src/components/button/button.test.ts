@@ -1,6 +1,7 @@
 import { describe, test } from 'vitest'
 import { mount } from '@vue/test-utils'
-import Button from './Button.vue'
+import Button from '@/components/button/Button.vue'
+
 describe('Button.vue', () => {
   test('basic button', () => {
     const wrapper = mount(Button, {
