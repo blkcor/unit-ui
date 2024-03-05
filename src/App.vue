@@ -1,4 +1,10 @@
 <script setup lang="ts">
+import { ref } from 'vue'
+import Button from './components/button/Button.vue'
+import Collapse from './components/collapse/Collapse.vue'
+import CollapseItem from './components/collapse/CollapseItem.vue'
+import Icon from './components/icon/Icon.vue'
+
 const activedNames = ref<string[]>(['collapse'])
 // const size = ref<any>('10x')
 // onMounted(() => {

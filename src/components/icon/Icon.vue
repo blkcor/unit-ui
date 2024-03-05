@@ -13,6 +13,7 @@
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 import type { IconProps } from './types'
 import { omit } from 'lodash'
+import { computed } from 'vue'
 
 defineOptions({
   name: 'UniIcon',

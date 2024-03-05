@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { computed, inject } from 'vue'
 import type { CollapseItemProps } from './types'
 import { collapeseContextKey } from './types'
 

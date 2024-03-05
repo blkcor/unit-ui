@@ -1,6 +1,6 @@
 import { describe, test } from 'vitest'
 import { mount } from '@vue/test-utils'
-import Button from '@/components/button/Button.vue'
+import Button from './Button.vue'
 
 describe('Button.vue', () => {
   test('basic button', () => {
