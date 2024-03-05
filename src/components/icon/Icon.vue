@@ -19,7 +19,6 @@ defineOptions({
   name: 'UniIcon',
   inheritAttrs: false
 })
-
 const props = defineProps<IconProps>()
 //不包含在AwesomeIconProps中的自定义属性需要进行过滤
 const filteredProps = computed(() => omit(props, ['type', 'color']))
