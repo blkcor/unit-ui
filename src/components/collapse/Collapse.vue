@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { ref, provide, watch } from 'vue'
 import type { NameType, CollapseProps, CollapseEmits } from './types'
 import { collapeseContextKey } from './types'
 

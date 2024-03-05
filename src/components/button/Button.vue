@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { ref } from 'vue'
 import type { ButtonProps } from './types'
 import Icon from '../icon/Icon.vue'
 

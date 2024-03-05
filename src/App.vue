@@ -3,7 +3,6 @@ import Button from '@/components/button/Button.vue'
 import CollapseItem from './components/collapse/CollapseItem.vue'
 import Collapse from './components/collapse/Collapse.vue'
 import Icon from './components/icon/Icon.vue'
-import { onMounted, ref } from 'vue'
 
 const activedNames = ref<string[]>(['collapse'])
 // const size = ref<any>('10x')
@@ -12,6 +11,7 @@ const activedNames = ref<string[]>(['collapse'])
 //     size.value = '2x'
 //   }, 2000)
 // })
+console.log(ref)
 </script>
 
 <template>

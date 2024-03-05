@@ -6,7 +6,8 @@
     "paths": {
       "@/*": ["./src/*"]
     },
-    "module": "esnext"
+    "module": "esnext",
+    "types": ["vue"]
   },
 
   "references": [
