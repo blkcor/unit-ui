@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import type { ButtonProps } from './types'
-import Icon from '../icon/Icon.vue'
 
 defineOptions({
   name: 'UniButton'
