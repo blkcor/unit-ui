@@ -11,7 +11,7 @@ export default defineConfig({
     vue({
       template: {
         compilerOptions: {
-          isCustomElement: (tag) => tag.startsWith('Uni')
+          // isCustomElement: (tag) => ['Icon'].includes(tag)
         }
       }
     }),

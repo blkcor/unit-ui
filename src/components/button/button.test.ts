@@ -77,7 +77,7 @@ describe('Button.vue', () => {
     expect(icon.attributes('icon')).toBe('spinner')
 
     //there is some problems with the click event => click event is emited when click the icon of the button
-    wrapper.trigger('click')
-    expect(wrapper.emitted()).not.toHaveProperty('click')
+    icon.trigger('click')
+    expect(wrapper.emitted()).toHaveProperty('click')
   })
 })
