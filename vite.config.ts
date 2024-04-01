@@ -4,7 +4,6 @@ import vueJsx from '@vitejs/plugin-vue-jsx'
 // import AutoImport from 'unplugin-auto-import/vite'
 // import Components from 'unplugin-vue-components/vite'
 import path from 'node:path'
-console.log(path.resolve(__dirname, 'src'))
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
